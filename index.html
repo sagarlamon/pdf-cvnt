@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Image to PDF Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Image to PDF Converter</h1>
+        <div class="upload-area" id="uploadArea" onclick="document.getElementById('imageInput').click()">
+            <input type="file" id="imageInput" accept="image/*" multiple>
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <p>Drag and drop your images here or <span class="browse-text">click to browse</span></p>
+            <p class="supported-formats">Supported formats: JPEG, PNG</p>
+        </div>
+
+        <div class="preview-area" id="previewArea" style="display: none;">
+            <h3>Image Previews</h3>
+            <div class="image-preview-container" id="imagePreviewContainer"></div>
+            <button id="convertBtn" class="btn">Convert to PDF</button>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Conversion Successful! ✨</h2>
+            <div class="modal-buttons">
+                <a id="downloadLink" class="btn"><i class="fas fa-download"></i> Download PDF</a>
+                <button class="btn share-btn" id="shareButton"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <div class="footer">
+        Made with ❤️ by SAGAR
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
